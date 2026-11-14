@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Papa&#x27;s Pizzaria | Class-43x</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../blue-theme.css">
+<link rel="stylesheet" href="../refresh.css">
+<link rel="stylesheet" href="../player.css">
+</head>
+<body>
+<main class="container game-page">
+  <a class="game-page__back" href="../index.html">← Class-43x game library</a>
+  <article>
+    <h1 class="game-page__title">Papa&#x27;s Pizzaria</h1>
+    <section class="game-player" id="player" aria-label="Game player">
+<div class="game-player__stage">
+<button class="game-player__start" type="button" id="start" data-url="https://icons-6.us/casual-games/papaspizzaria/">Play game ▶</button>
+<iframe class="game-player__frame" id="gameframe" title="Game player" allow="fullscreen; gamepad; autoplay" allowfullscreen referrerpolicy="no-referrer" hidden></iframe>
+</div>
+<div class="game-player__toolbar"><button class="game-player__fullscreen" id="fullscreen" type="button" hidden>Fullscreen ⛶</button>
+<details class="game-player__help"><summary>Game not loading?</summary><a href="https://icons-6.us/casual-games/papaspizzaria/" target="_blank" rel="noopener noreferrer">Open on the game provider ↗</a></details></div>
+</section>
+<script>
+const start = document.getElementById('start');
+const frame = document.getElementById('gameframe');
+const fullscreen = document.getElementById('fullscreen');
+function play() {
+  frame.src = start.dataset.url;
+  frame.hidden = false;
+  start.hidden = true;
+  fullscreen.hidden = !document.fullscreenEnabled || !frame.requestFullscreen;
+}
+start.addEventListener('click', () => {
+  play();
+  frame.focus();
+});
+fullscreen.addEventListener('click', () => frame.requestFullscreen().catch(() => {}));
+if (location.hash === '#player') play();
+</script>
+    <div class="game-guide-layout">
+      <section class="game-guide"><h2>Getting started with Papa&#x27;s Pizzaria</h2><p>Papa&#x27;s Pizzaria is listed as a management game. Start by checking the opening screen for the objective and any instructions for your device.</p><h2>Tips for your first session</h2><p>Use the opening screen to identify the goal and try one input at a time. Watch how the game responds before attempting a longer run.</p></section>
+      <section class="game-guide"><h2>Game details</h2><dl><dt>Genre</dt><dd>Management Games</dd><dt>Developer</dt><dd>Flipline Studios</dd><dt>Release</dt><dd>August 7, 2007</dd><dt>Technology</dt><dd>Flash</dd></dl><p>Check the in-game menu for controls.</p></section>
+    </div>
+  </article>
+</main>
+</body>
+</html>

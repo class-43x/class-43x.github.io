@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Retro Bowl | Class-43x</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../blue-theme.css">
+<link rel="stylesheet" href="../refresh.css">
+<link rel="stylesheet" href="../player.css">
+</head>
+<body>
+<main class="container game-page">
+  <a class="game-page__back" href="../index.html">← Class-43x game library</a>
+  <article>
+    <h1 class="game-page__title">Retro Bowl</h1>
+    <section class="game-player" id="player" aria-label="Game player">
+<div class="game-player__stage">
+<button class="game-player__start" type="button" id="start" data-url="https://icons-6.us/driving-games/retro-bowl/">Play game ▶</button>
+<iframe class="game-player__frame" id="gameframe" title="Game player" allow="fullscreen; gamepad; autoplay" allowfullscreen referrerpolicy="no-referrer" hidden></iframe>
+</div>
+<div class="game-player__toolbar"><button class="game-player__fullscreen" id="fullscreen" type="button" hidden>Fullscreen ⛶</button>
+<details class="game-player__help"><summary>Game not loading?</summary><a href="https://icons-6.us/driving-games/retro-bowl/" target="_blank" rel="noopener noreferrer">Open on the game provider ↗</a></details></div>
+</section>
+<script>
+const start = document.getElementById('start');
+const frame = document.getElementById('gameframe');
+const fullscreen = document.getElementById('fullscreen');
+function play() {
+  frame.src = start.dataset.url;
+  frame.hidden = false;
+  start.hidden = true;
+  fullscreen.hidden = !document.fullscreenEnabled || !frame.requestFullscreen;
+}
+start.addEventListener('click', () => {
+  play();
+  frame.focus();
+});
+fullscreen.addEventListener('click', () => frame.requestFullscreen().catch(() => {}));
+if (location.hash === '#player') play();
+</script>
+    <div class="game-guide-layout">
+      <section class="game-guide"><h2>Getting started with Retro Bowl</h2><p>Retro Bowl is listed as a football game. Start by checking the opening screen for the objective and any instructions for your device.</p><h2>Tips for your first session</h2><p>Use a practice attempt to learn how movement affects your shot. Pay attention to the space between you and the defender before committing.</p></section>
+      <section class="game-guide"><h2>Game details</h2><dl><dt>Genre</dt><dd>Football Games</dd><dt>Developer</dt><dd>New Star Games</dd><dt>Release</dt><dd>January 2020</dd><dt>Technology</dt><dd>HTML5, JavaScript</dd></dl><p>Check the in-game menu for controls.</p></section>
+    </div>
+  </article>
+</main>
+</body>
+</html>

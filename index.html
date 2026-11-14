@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" class="theme-blue">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080f1d">
+  <meta name="description" content="Browse browser games by category, discover new favorites, and find controls and tips in the game guides.">
+  <title>Class-43x — Browser Games</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blue-theme.css">
+  <link rel="stylesheet" href="refresh.css">
+</head>
+<body>
+  <div class="catalog-shell">
+    <header class="site-nav">
+      <a class="site-brand" href="./"><span class="brand-tile" aria-hidden="true">43</span>Class-43x</a>
+      <nav aria-label="Main menu"><a href="#home">Home</a><a href="#search">Search</a><a href="#about">About</a></nav>
+    </header>
+
+    <section class="catalog-hero" id="home" aria-labelledby="site-title">
+      <div>
+        <h1 id="site-title">Class-43x</h1>
+        <p>Find a free browser game and start playing.</p>
+        <a class="hero-action" href="#games">Browse games <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-emblem" aria-hidden="true">
+        <svg class="controller-icon" viewBox="0 0 64 48">
+          <path d="M15 10h34c5 0 8 3 10 9l4 17c1 5-5 8-9 5L42 32H22L10 41c-4 3-10 0-9-5l4-17c2-6 5-9 10-9Z" fill="currentColor"/>
+          <path d="M17 17v12M11 23h12" stroke="var(--base)" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="47" cy="20" r="3" fill="var(--base)"/><circle cx="53" cy="26" r="3" fill="var(--base)"/>
+        </svg>
+      </div>
+    </section>
+
+    <main class="catalog" id="games">
+      <div class="library-title">
+        <h2 id="section-title">Game library</h2>
+        <span class="count" id="count" role="status">Loading games…</span>
+      </div>
+      <section class="catalog-tools" aria-label="Filter games">
+        <div class="catalog-search">
+          <input id="search" type="search" placeholder="Search games…" aria-label="Search games">
+          <select id="sort" aria-label="Sort games">
+            <option value="az">Name: A–Z</option>
+            <option value="za">Name: Z–A</option>
+            <option value="popular">Most popular</option>
+            <option value="random">Random</option>
+          </select>
+          <button id="reset" type="button">Reset</button>
+        </div>
+        <div class="category-bar" id="categories" role="group" aria-label="Game categories"></div>
+      </section>
+      <section class="game-grid" id="game-grid" aria-labelledby="section-title"></section>
+      <div class="empty-state" id="empty" hidden><h3>No games found</h3><p>Try another search or reset the filters.</p></div>
+    </main>
+
+    <footer class="catalog-footer" id="about">
+      <span>Class-43x · Browser games and guides</span>
+      <a href="#home">Back to top ↑</a>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boxel Rebound | Class-43x</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../blue-theme.css">
+<link rel="stylesheet" href="../refresh.css">
+<link rel="stylesheet" href="../player.css">
+</head>
+<body>
+<main class="container game-page">
+  <a class="game-page__back" href="../index.html">← Class-43x game library</a>
+  <article>
+    <h1 class="game-page__title">Boxel Rebound</h1>
+    <section class="game-player" id="player" aria-label="Game player">
+<div class="game-player__stage">
+<button class="game-player__start" type="button" id="start" data-url="https://icons-6.us/action-games/boxel-rebound/">Play game ▶</button>
+<iframe class="game-player__frame" id="gameframe" title="Game player" allow="fullscreen; gamepad; autoplay" allowfullscreen referrerpolicy="no-referrer" hidden></iframe>
+</div>
+<div class="game-player__toolbar"><button class="game-player__fullscreen" id="fullscreen" type="button" hidden>Fullscreen ⛶</button>
+<details class="game-player__help"><summary>Game not loading?</summary><a href="https://icons-6.us/action-games/boxel-rebound/" target="_blank" rel="noopener noreferrer">Open on the game provider ↗</a></details></div>
+</section>
+<script>
+const start = document.getElementById('start');
+const frame = document.getElementById('gameframe');
+const fullscreen = document.getElementById('fullscreen');
+function play() {
+  frame.src = start.dataset.url;
+  frame.hidden = false;
+  start.hidden = true;
+  fullscreen.hidden = !document.fullscreenEnabled || !frame.requestFullscreen;
+}
+start.addEventListener('click', () => {
+  play();
+  frame.focus();
+});
+fullscreen.addEventListener('click', () => frame.requestFullscreen().catch(() => {}));
+if (location.hash === '#player') play();
+</script>
+    <div class="game-guide-layout">
+      <section class="game-guide"><h2>Getting started with Boxel Rebound</h2><p>Boxel Rebound is listed as a platformer game. Start by trying the listed inputs (Space Bar / Up Arrow / Click) and getting comfortable with how they respond.</p><h2>What to expect</h2><p>Boxel Rebound is a poopular Chrome extension platformer game, brought to the web by MacVG. In this fast-paced reaction game, you need to control a block to jump over obstacles, spikes, and cliffs. Try to reach the end as fast as possible! As you advance, levels will be getting harder and there will also be other techniques like trampolines, speed up blocks, and resizers. Jump at the right time to avoid dying and get as many points as possible! Other than the preloaded 50 levels, you can also create your own unique fun levels and enjoy it yourself or with friends! Have fun!</p><h2>Tips for your first session</h2><p>Use the first obstacles to learn the timing. If you miss the same jump twice, change where you start it before changing your whole route.</p></section>
+      <section class="game-guide"><h2>Game details</h2><dl><dt>Genre</dt><dd>Platformer Games</dd><dt>Developer</dt><dd>Doppler Creative</dd><dt>Release</dt><dd>April 20, 2017</dd><dt>Technology</dt><dd>HTML5, JavaScript</dd></dl><h2>Controls</h2><ul><li>Space Bar / Up Arrow / Click: Jump</li></ul></section>
+    </div>
+  </article>
+</main>
+</body>
+</html>
